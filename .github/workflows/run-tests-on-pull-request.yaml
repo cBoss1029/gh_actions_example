@@ -1,0 +1,12 @@
+name: Run Cypress tests on pull request
+run-name: ${{ github.actor }} is submitting a pull request
+on: [pull_request]
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Cypress Run
+        uses: cypress-io/github-action@v3
